@@ -1,8 +1,11 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {nanoid} from "nanoid"
 import './App.css';
 import NotesList from './components/NoteList';
+import SearchNote from './components/SearchNote';
+import Header  from './components/Header';
+
 function App() {
 
   const [notes, setNotes]  = useState(
@@ -29,6 +32,13 @@ function App() {
 
   },
 ]);
+const [searchText, setSearchText] = useState('');
+const [lightMode, setLightMode] = useState(false)
+
+useEffect(() => {
+localStorage.setItem('react-notes-app-data',JSON.stringify(notes))
+
+}, [notes])
 
 const addNote = (heading, text) =>{
 
@@ -50,13 +60,21 @@ setNotes(newNotes)
 }
   
 return (
-    <div className="container">
+    <div className={`${lightMode && 'light-mode'}`}>
+      <div className="container"> 
+    <Header 
+    handleLightMode={setLightMode}
+    />
+    <SearchNote 
+    handleSearchNote={setSearchText}
+    /> 
       <NotesList 
-      notes={notes}
+      notes={notes.filter((note)=> note.text.toLowerCase().includes(searchText))}
       handleAddNote={addNote}
       handleDeleteNote={deleteNote}
       />
       
+    </div>
     </div>
   );
 }
