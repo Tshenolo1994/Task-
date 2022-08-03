@@ -28,7 +28,7 @@ import {
     return (
       <Box>
         <Flex
-          bg='#002b60'
+         background="radial-gradient(circle at 50% 50%, #002b60, #022a5f, #06285b, #0b2556, #102250, #131e4a, #141a43, #15173c, #141437, #141132, #140f2f, #140e2e)"
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
           py={{ base: 2 }}
@@ -80,8 +80,8 @@ import {
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
-              color={'white'}
-              bg={'#88BE46'}
+              color={'navy'}
+              bg={'#C6E912'}
               href={'#'}
               _hover={{
                 bg: 'pink.300',

@@ -34,31 +34,46 @@ function App() {
 ]);
 const [searchText, setSearchText] = useState('');
 const [lightMode, setLightMode] = useState(false)
+useEffect(() => {
+  const savedNotes = JSON.parse(
+    localStorage.getItem('react-notes-app-data')
+  );
+
+  if (savedNotes) {
+    setNotes(savedNotes);
+  }
+}, []);
 
 useEffect(() => {
-localStorage.setItem('react-notes-app-data',JSON.stringify(notes))
+  localStorage.setItem(
+    'react-notes-app-data',
+    JSON.stringify(notes)
+  );
+}, [notes]);
 
-}, [notes])
+const addNote = (obj) =>{
 
-const addNote = (heading, text) =>{
+    // console.log(obj.noteText);
+    // console.log(obj.noteTitle);
 
-const date = new Date();
-const newNote = {
-  id:nanoid,
 
-  heading: heading,
-  text: text,
-  date: date.toLocaleDateString,
-}
+    const date = new Date();
+    const newNote = {
+      id:nanoid,
+      heading: obj.noteTitle,
+      text: obj.noteText,
+      date: date.toLocaleDateString(),
+    }
+    
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes)
 
-const newNotes = [...notes, newNote];
-setNotes(newNotes)
 }
 const deleteNote = (id) =>{
 const newNotes = notes.filter((note) => note.id !== id)
 setNotes(newNotes)
 }
-  
+console.log("app.js is called");
 return (
     <div className={`${lightMode && 'light-mode'}`}>
       <div className="container"> 
@@ -69,7 +84,8 @@ return (
     handleSearchNote={setSearchText}
     /> 
       <NotesList 
-      notes={notes.filter((note)=> note.text.toLowerCase().includes(searchText))}
+      notes={notes.filter((note)=>
+      note.text.toLowerCase().includes(searchText))}
       handleAddNote={addNote}
       handleDeleteNote={deleteNote}
       />

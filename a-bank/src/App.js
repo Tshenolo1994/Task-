@@ -3,16 +3,17 @@ import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from "./components/Navbar"
 import Header from "./components/Header"
+import Services from './components/Services';
 
 function App() {
   return (
-    <div className="App">
+ 
     <ChakraProvider>
     <Navbar />
       <Header />
-  
+  <Services />
     </ChakraProvider>
-    </div>
+    
   );
 }
 
