@@ -24,7 +24,7 @@ import {
          <Grid templateColumns='repeat(2, 1fr)' gap={1} h="100%"
         padding={24}
       paddingTop={30}
-      background="radial-gradient(circle at 50% 50%, #002b60, #022a5f, #06285b, #0b2556, #102250, #131e4a, #141a43, #15173c, #141437, #141132, #140f2f, #140e2e)"
+      background="#140e2e"
         position="relative">
 
         <Box w="100%" h="100%"  bg="transparent" display="flex" flexDirection="column" justifyContent="space-between" alignItems="flex-start" gap={2} pt="15">
@@ -64,11 +64,11 @@ import {
 </Flex>
       
 <Flex flexDirection="column" >
-<Text fontSize='2xl' w="60%" textAlign="left" color="#C6E912">12.5%</Text>
+<Text fontSize='2xl' w="60%" textAlign="left" color="#C6E912">#1</Text>
 <Text fontSize='sm' w="80%" textAlign="left" color="#fafafa" >Rated the best bank for customer satisfaction</Text>
 </Flex>
 <Flex flexDirection="column" >
-<Text fontSize='2xl' w="80%" textAlign="left" color="#C6E912">#1</Text>
+<Text fontSize='2xl' w="80%" textAlign="left" color="#C6E912">12.5% </Text>
 <Text fontSize='sm' w="80%" textAlign="left" color="#fafafa">SA's best rate of 12.50%.  <ArrowForwardIcon /></Text>
 </Flex>
       
@@ -108,6 +108,7 @@ position="absolute"  left="20%" top="10%">
         aspectRatio: '1'
       }}
   />
+        </Box>
         </Box>
         <Box w="45%" height="100%">
 <Image

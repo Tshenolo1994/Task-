@@ -28,8 +28,8 @@ import {
     return (
       <Box>
         <Flex
-         background="radial-gradient(circle at 50% 50%, #002b60, #022a5f, #06285b, #0b2556, #102250, #131e4a, #141a43, #15173c, #141437, #141132, #140f2f, #140e2e)"
-          color={useColorModeValue('gray.600', 'white')}
+   background="#140e2e"
+          color="#fafafa"
           minH={'60px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
@@ -54,7 +54,7 @@ import {
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
+              color="#fafafa">
               Logo
             </Text>
   
@@ -69,6 +69,7 @@ import {
             direction={'row'}
             spacing={6}>
             <Button
+            color="#fafafa"
               as={'a'}
               fontSize={'sm'}
               fontWeight={400}
@@ -99,7 +100,7 @@ import {
   }
   
   const DesktopNav = () => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
+    const linkColor = useColorModeValue('white.600', 'white.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
@@ -251,22 +252,22 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Inspiration',
+      label: 'Home',
       children: [
         {
-          label: 'Explore Design Work',
+          label: 'Products',
           subLabel: 'Trending Design to inspire you',
           href: '#',
         },
         {
-          label: 'New & Noteworthy',
+          label: 'Banking',
           subLabel: 'Up-and-coming Designers',
           href: '#',
         },
       ],
     },
     {
-      label: 'Find Work',
+      label: 'Products',
       children: [
         {
           label: 'Job Board',
@@ -281,11 +282,11 @@ import {
       ],
     },
     {
-      label: 'Learn Design',
+      label: 'Banking',
       href: '#',
     },
     {
-      label: 'Hire Designers',
+      label: 'Contact',
       href: '#',
     },
   ];
